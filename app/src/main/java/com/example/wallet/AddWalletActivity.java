@@ -19,13 +19,16 @@ package com.example.wallet;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -55,13 +58,27 @@ public class AddWalletActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_wallet);
 
+        View fakeButton = (View)findViewById(R.id.fake_button);
+        fakeButton.setClickable(true);
+
+        final View walletButtonContainer = (View)findViewById(R.id.dynamic_wallet_button_fragment);
+
+        fakeButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                walletButtonContainer.dispatchTouchEvent(event);
+
+                return false;
+            }
+        });
+
         createAndAddWalletFragment();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        ActivityCompat.invalidateOptionsMenu(this);
+
     }
 
     @Override
@@ -146,6 +163,8 @@ public class AddWalletActivity extends Activity {
                 .replace(R.id.dynamic_wallet_button_fragment, mWalletFragment)
                 .commit();
     }
+
+
 
     private static MaskedWalletRequest createMaskedWalletRequest() {
 

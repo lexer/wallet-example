@@ -26,4 +26,6 @@
     <color name="bikestore_button_text">#000000</color>
     <color name="bikestore_white">#FFFFFF</color>
 
+    <color name="material_blue_pressed">#0099CC</color>
+    <color name="material_blue_normal">#33B5E5</color>
 </resources>

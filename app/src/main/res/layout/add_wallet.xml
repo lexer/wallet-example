@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,14 +17,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
 
     <FrameLayout
-        android:id="@+id/dynamic_wallet_button_fragment"
-        android:layout_height="@dimen/buy_button_height"
-        android:layout_width="@dimen/buy_button_width"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/margin_xlarge"
-        android:layout_marginBottom="@dimen/margin_xlarge" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/dynamic_wallet_button_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/buy_button_height"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/fake_button"
+            android:text="MY WALLET BUTTON"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/buy_button_height"
+            android:background="@drawable/blue_button"
+            />
+    </FrameLayout>
+
 </LinearLayout>
