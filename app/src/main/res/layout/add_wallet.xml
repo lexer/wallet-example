@@ -24,13 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:id="@+id/dynamic_wallet_button_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/buy_button_height"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
+        <Button
             android:id="@+id/fake_button"
             android:text="MY WALLET BUTTON"
             android:layout_width="match_parent"
