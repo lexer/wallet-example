@@ -127,7 +127,11 @@ public class AddWalletActivity extends Activity implements GoogleApiClient.Conne
                             Log.d(TAG, "month: " + fullWallet.getProxyCard().getExpirationMonth());
                             Log.d(TAG, "year: " + fullWallet.getProxyCard().getExpirationYear());
                             Log.d(TAG, "zip" + fullWallet.getBillingAddress().getPostalCode());
+
                         }
+                        break;
+                    default:
+                        handleError(errorCode);
                         break;
                 }
                 break;
